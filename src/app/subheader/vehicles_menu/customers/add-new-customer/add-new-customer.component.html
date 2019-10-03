@@ -1,0 +1,262 @@
+<mat-divider></mat-divider>
+<div class ='stepper'>
+   <mat-vertical-stepper>
+      <mat-step label = 'Customer'>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Name' [formControl] = 'name'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput [matDatepicker]="cocPicker" [formControl] = 'coc' placeholder = 'CoC'>
+               <mat-datepicker-toggle matSuffix [for]="cocPicker"></mat-datepicker-toggle>
+               <mat-datepicker #cocPicker></mat-datepicker>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput [matDatepicker]="cddPicker" [formControl] = 'cdd' placeholder = 'CDD'>
+               <mat-datepicker-toggle matSuffix [for]="cddPicker"></mat-datepicker-toggle>
+               <mat-datepicker #cddPicker></mat-datepicker>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Exploitation Address'>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Street' [formControl] = 'street'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Postal' [formControl] = 'postal'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'City' [formControl] = 'city'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <mat-select placeholder = 'Country' [formControl] = 'country'>
+                  <mat-option *ngFor = 'let countr of countries' value = 'countr'>{{countr}}</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Customer General Contact Details'>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Phone' [formControl] = 'phone'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Email' [formControl] = 'email'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Website' [formControl] = 'website'>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Invoice Details'>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'VAT' [formControl] = 'vatNo'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'CoC Number' [formControl] = 'cocNo'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Debtor Number' [formControl] = 'debtorNo'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Invoice Address' [formControl] = 'invoiceAddress'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Postal' [formControl] = 'invoicePostal' >
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'City' [formControl] = 'invoiceCity'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Email' [formControl] = 'invoiceEmail'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <mat-select placeholder = 'Country' [formControl] = 'invoiceCountry'>
+                  <mat-option *ngFor = 'let countr of countries' value = 'countr'>{{countr}}</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Customer Comments'>
+         <mat-form-field>
+            <textarea matInput placeholder = 'Comments' [formControl] = 'comments'></textarea>
+         </mat-form-field>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Customer Status'>
+         <mat-form-field>
+            <mat-select placeholder = 'Status' [formControl] = 'status'>
+               <mat-option *ngFor = 'let statuss of statuses' value = 'statuss'>{{statuss}}</mat-option>
+            </mat-select>
+         </mat-form-field>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Confirm'>
+         <mat-card>
+            <mat-card-header>
+            </mat-card-header>
+            <mat-card-content>
+               <div>
+                  <p>Name: {{name.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Street: {{street.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Postal: {{postal.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>City: {{city.value}}</p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Country: {{country.value}}</p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Phone: {{phone.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Email: {{email.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Website: {{website.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>VAT: {{vatNo.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>CoC Number: {{cocNo.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Debtor Number: {{debtorNo.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Invoice address: {{invoiceAddress.value}} </p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                  <p>Invoice postal: {{invoicePostal.value}} </p>
+               </div>
+            </mat-card-content>
+         </mat-card>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext (click) = 'addCustomer()'>
+            Confirm
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Done'>
+      </mat-step>
+   </mat-vertical-stepper>
+</div>
+<mat-divider></mat-divider>

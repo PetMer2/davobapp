@@ -1,0 +1,208 @@
+<mat-divider></mat-divider>
+<div class ='stepper'>
+   <mat-vertical-stepper>
+      <mat-step label = 'Contract content'>
+        <div>
+         <mat-form-field>
+            <mat-label>Contract type</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let type of contracts" value="{{type}}">
+               {{ type }}
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div>
+         <mat-form-field>
+            <mat-label>Proto ID</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let proto of protos" value="{{proto.id}}">
+               {{ proto.id }}
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div>
+         <mat-form-field>
+            <mat-label>Manager</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let manager of managers" value="{{manager}}">
+               {{ manager }}
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div>
+         <mat-form-field>
+            <mat-label>Coordinator</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let coordinator of coordinators" value="{{coordinator}}">
+               {{ coordinator }}
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div>
+         <mat-form-field>
+            <mat-label>Operator</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let operator of operators" value="{{operator}}">
+               {{ operator }}
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div>
+         <mat-form-field>
+            <mat-label>Customer</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let customer of customers" value="{{customer}}">
+               {{ customer }}
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div>
+         <mat-form-field>
+            <mat-label>Contact 1</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let contact of contacts" value="{{contact}}">
+               {{ contact }}
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div>
+         <mat-form-field>
+            <mat-label>Contact 2</mat-label>
+            <mat-select>
+               <mat-option *ngFor="let contact of contacts" value="{{contact}}">
+               {{ contact }}
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         </div>
+         <div>
+           <mat-form-field class = 'test'>
+             <textarea matInput placeholder="Test Components"></textarea>
+           </mat-form-field>
+         </div>
+         <div>
+           <mat-form-field class = 'test'>
+             <textarea matInput placeholder="Comments"></textarea>
+           </mat-form-field>
+         </div>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Additional info'>
+        <mat-card>
+          <div>
+            <p>Creator:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Datetime:</p>
+          </div>
+        </mat-card>
+        <button mat-button matStepperPrevious>
+         Previous
+         </button>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Confirm'>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>The new contract details</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Contract type:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Proto ID:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Manager:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Coordinator:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Operator:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Customer:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Contact 1:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Contact 2:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Test components:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Comments:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Creator:</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Datetime:</p>
+          </div>
+        </mat-card>
+        <button mat-button matStepperPrevious>
+         Previous
+         </button>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Done'>
+        <p> Response </p>
+      </mat-step>
+   </mat-vertical-stepper>
+</div>
+<mat-divider></mat-divider>

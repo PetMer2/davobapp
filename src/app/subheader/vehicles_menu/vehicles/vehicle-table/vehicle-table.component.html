@@ -1,0 +1,134 @@
+<!-- Filter bar -->
+<mat-form-field class='filterbar'>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<mat-divider></mat-divider>
+<table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+    <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+        <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+        <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+    </ng-container>
+
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+            <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"
+            style = 'margin-bottom: 5px;'>
+                <button mat-stroked-button (click)='displayEditTab(element.proto)'>
+                    <mat-icon color='accent'>
+                        <i>edit</i>
+                    </mat-icon>
+                    <span>
+                        {{element.edit ? 'Close' : 'Edit vehicle'}}
+                    </span>
+                </button>
+                <button mat-stroked-button (click) = 'displayReportsTab(element.proto)' >
+                    <mat-icon color='accent'>
+                        <i>report</i>
+                    </mat-icon>
+                    <span>
+                        {{element.report ? 'Close' : 'Generate a report'}}
+                    </span>
+                </button>
+                <mat-card *ngIf='element.edit == true'>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Proto ID" value="{{element.proto}}" [formControl]='protoid'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Operator" value="{{element.operator}}" [formControl]='operator'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Group" value="{{element.group}}" [formControl]='group'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Subgroup" value="{{element.subgroup}}" [formControl]='subgroup'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Vehicle Type" value="{{element.vehicletype}}" [formControl]='vehicletype'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Engine Type" value="{{element.enginetype}}" [formControl]='enginetype'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="licenseid" value="{{element.licenseid}}" [formControl]='licenseid'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Customer" value="{{element.customer}}" [formControl]='customer'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Driver 1" value="{{element.driver1}}" [formControl]='driver1'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Driver 2" value="{{element.driver2}}" [formControl]='driver2'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <mat-form-field>
+                            <input matInput placeholder="Comments" value="{{element.comments}}" [formControl]='comments'>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf='element.edit == true'>
+                        <button mat-stroked-button (click)='update(element.proto); openSnackBar()'>
+                            <mat-icon color='accent'>update</mat-icon>
+                            Update
+                        </button>
+                    </div>
+                </mat-card>
+                <div *ngIf='element.report == true'>
+                <mat-form-field>
+                    <mat-label>Choose a report</mat-label>
+                    <mat-select [formControl] = 'reportType'>
+                        <mat-option *ngFor="let report of reports" [value]="report.name">
+                            {{report.name}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div>
+                    <button mat-stroked-button style = 'margin-bottom: 5px;'>
+                        <mat-icon color = 'accent'>
+                            <i>get_app</i>
+                        </mat-icon>
+                        <span>
+                          Generate the report
+                        </span>
+                    </button>
+                </div>
+                <div>
+                    <button mat-stroked-button style = 'margin-bottom: 5px;' routerLink = '/reports'>
+                        <mat-icon color = 'accent'>
+                            <i>fast_forward</i>
+                        </mat-icon>
+                        <span>
+                          Advanced reporting
+                        </span>
+                    </button>
+                </div>
+            </div>
+            </div>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row" [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+</table>

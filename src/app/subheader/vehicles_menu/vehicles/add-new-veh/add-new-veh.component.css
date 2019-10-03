@@ -1,0 +1,9 @@
+.next:hover {
+  cursor: pointer;
+}
+
+.addvehicle {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}

@@ -1,0 +1,110 @@
+<div class = 'filters'>
+   <span>
+      <mat-form-field>
+         <mat-label>Custom parameters</mat-label>
+         <mat-select [formControl]="customParametersFormControl" multiple>
+            <mat-option *ngFor="let parameter of customQueryParameters" [value]="parameter">{{parameter}}</mat-option>
+         </mat-select>
+      </mat-form-field>
+   </span>
+   <span>
+      <mat-form-field>
+         <mat-label>Select a report</mat-label>
+         <mat-select [formControl] = 'reportType'>
+         <mat-option *ngFor = "let report of dataSource" value="{{report.name}}">{{report.name}}</mat-option>
+         </mat-select>
+      </mat-form-field>
+   </span>
+   <span>
+      <mat-form-field>
+         <mat-label>Protos</mat-label>
+  <mat-select [formControl]="protoFormControl" multiple>
+    <mat-option *ngFor="let proto of protos" [value]="proto.proto">{{proto.proto}}</mat-option>
+  </mat-select>
+      </mat-form-field>
+   </span>
+   <span>
+      <mat-form-field>
+         <input matInput [matDatepicker]="startdate" [formControl] = 'startDate' placeholder="Choose a start date">
+         <mat-datepicker-toggle matSuffix [for]="startdate"></mat-datepicker-toggle>
+         <mat-datepicker #startdate></mat-datepicker>
+      </mat-form-field>
+   </span>
+   <span>
+      <mat-form-field>
+         <input matInput [matDatepicker]="enddate" [formControl] = 'endDate' placeholder="Choose an end date">
+         <mat-datepicker-toggle matSuffix [for]="enddate"></mat-datepicker-toggle>
+         <mat-datepicker #enddate></mat-datepicker>
+      </mat-form-field>
+   </span>
+</div>
+<div class = 'searchbar'>
+  <mat-card class = 'card'>
+    <mat-card-title>
+      Report details
+    </mat-card-title>
+    <mat-card-content>
+      <p>
+        <span>Selected custom parameters:</span>
+        <span *ngIf = 'customParametersFormControl.value != null'> {{ customParametersFormControl.value }}</span> 
+      </p>
+      <br>
+      <mat-divider></mat-divider>
+      <br>
+      <p>
+        <span> Selected report type: </span> 
+        <span *ngIf = 'reportType.value != null'>{{ reportType.value }}</span>
+      </p>
+      <br>
+      <mat-divider></mat-divider>
+      <br>
+      <p>
+        <span> Selected proto: </span> 
+        <span *ngIf = 'protoFormControl.value != null'>{{ protoFormControl.value }}</span>
+      </p>
+      <br>
+      <mat-divider></mat-divider>
+      <br>
+      <p>
+        <span>Selected start date</span> 
+        <span *ngIf = 'startDate.value != null'> {{ startDate.value }}</span> 
+      </p>
+      <br>
+      <mat-divider></mat-divider>
+      <br>
+      <p> 
+        <span>Selected end date: </span> 
+        <span *ngIf = 'endDate.value != null'>{{ endDate.value }}</span> 
+      </p>
+      <br>
+      <mat-divider></mat-divider>
+      <br>
+    </mat-card-content>
+  </mat-card>
+</div>
+<mat-divider></mat-divider>
+  <mat-toolbar class = 'search_icon' color = 'primary'>
+   <mat-icon color = 'accent'>
+      <i>search</i>
+   </mat-icon>
+   <button mat-button routerLink = '/reporttemplate'>
+   Search
+   </button>
+  </mat-toolbar>
+<mat-divider></mat-divider>
+<!--<h2>Reports description</h2>-->
+<div class = 'descriptions'>
+   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+         <th mat-header-cell *matHeaderCellDef> Name </th>
+         <td mat-cell *matCellDef="let report"> {{report.name}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="description">
+         <th mat-header-cell *matHeaderCellDef> Description </th>
+         <td mat-cell *matCellDef="let report"> {{report.description}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+   </table>

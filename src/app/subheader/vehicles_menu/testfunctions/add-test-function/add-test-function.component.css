@@ -1,0 +1,17 @@
+.stepper {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.checkbox {
+  display:flex;
+  justify-content: space-between;
+  min-width: 400px;
+  max-width:600px;
+}
+
+mat-form-field {
+  min-width: 300px;
+}

@@ -1,0 +1,262 @@
+<mat-divider></mat-divider>
+<div class ='stepper'>
+   <mat-vertical-stepper>
+      <mat-step label = 'DM1 Message'>
+        <mat-vertical-stepper>
+          <mat-step label = 'ID'>
+            <mat-form-field>
+            <input matInput placeholder = 'ID'>
+            </mat-form-field>
+            <div>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+          <mat-step label = 'Source Address'>
+            <mat-form-field>
+            <input matInput placeholder = 'SA HEX'>
+            </mat-form-field>
+            <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+          <mat-step label = "PGN's DEC">
+            <div>
+              <mat-form-field>
+            <input matInput placeholder = 'SPN1 DEC'>
+            </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field>
+            <input matInput placeholder = 'SPN2 DEC'>
+            </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field>
+            <input matInput placeholder = 'SPN3 DEC'>
+            </mat-form-field>
+            </div>
+            <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+          <mat-step label = "PGN's HEX">
+            <div>
+              <mat-form-field>
+            <input matInput placeholder = 'SPN1 HEX'>
+            </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field>
+            <input matInput placeholder = 'SPN2 HEX'>
+            </mat-form-field>
+            </div>
+            <div>
+              <mat-form-field>
+            <input matInput placeholder = 'SPN3 HEX'>
+            </mat-form-field>
+            </div>
+            <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+        </mat-vertical-stepper>
+        <div>
+
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Fault Code'>
+        <mat-vertical-stepper>
+          <mat-step label = 'ECU'>
+            <div>
+              <mat-form-field>
+                <input matInput placeholder = 'ECU'>
+              </mat-form-field>
+            </div>
+            <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+          <mat-step label = 'SPN/FMI (DEC)'>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder = 'SPN DEC'>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder = 'FMI DEC'>
+            </mat-form-field>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+          <mat-step label = 'SPN/FMI (HEX)'>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder = 'SPN HEX'>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder = 'FMI HEX'>
+            </mat-form-field>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+          <mat-step label = "DTC's">
+          <div>
+            <mat-form-field>
+              <input matInput placeholder = 'DTC DEC'>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder = 'DTC HEX'>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <input matInput placeholder = 'DTC Tool'>
+            </mat-form-field>
+          </div>
+          <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+          <mat-step label = 'Reference'>
+            <mat-form-field>
+              <mat-select placeholder = 'Fault list'>
+                <mat-option>
+
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+          </mat-step>
+          <mat-step label = 'Define Lamp Status'>
+            <div>
+              <mat-checkbox>
+                MIL
+              </mat-checkbox>
+              <mat-checkbox>
+                Stored
+              </mat-checkbox>
+            </div>
+            <mat-form-field>
+              <mat-select placeholder = 'Lamp Status'>
+                <mat-option>
+                  
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-step>
+        </mat-vertical-stepper>
+        <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Fault Description'>
+        <div>
+        <mat-form-field>
+          <input matInput = 'Failure name'>
+        </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+          <textarea matInput placeholder = 'Description'></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Comments'>
+        <div>
+          <mat-form-field>
+          <textarea matInput placeholder = 'Comments'></textarea>
+          </mat-form-field>
+        </div>
+        <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Confirm'>
+        <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Done'>
+      </mat-step>
+   </mat-vertical-stepper>
+</div>
+<mat-divider></mat-divider>

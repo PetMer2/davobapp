@@ -1,0 +1,248 @@
+<div class='addvehicle'>
+    <mat-vertical-stepper>
+        <!-- Step 1 -->
+        <mat-step label='Fill in the Proto ID'>
+            <span>
+            <mat-form-field>
+               <input matInput placeholder='Proto ID' [formControl] = 'proto'>
+            </mat-form-field>
+         </span>
+            <span>
+         <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <!-- Step 2 -->
+        <mat-step label='Fill in the operator'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Operator' [formControl] = 'operator'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the group'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Group' [formControl] = 'group'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the subgroup'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='subgroup' [formControl] = 'subgroup'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the description'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Description' [formControl] = 'description'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the vehicle type'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Vehicle Type' [formControl] = 'vehicletype'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the engine type'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Engine Type' [formControl] = 'enginetype'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the license ID'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='License ID' [formControl] = 'licenseid'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the customer'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Customer' [formControl] = 'customer'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the first driver'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Driver 1' [formControl] = 'driver1'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the second driver'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Driver 2' [formControl] = 'driver2'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <mat-step label='Fill in the comments'>
+            <span>
+         <mat-form-field>
+            <input matInput placeholder='Comments' [formControl] = 'comments'>
+         </mat-form-field>
+         </span>
+            <span>
+           <button mat-button matStepperPrevious> Previous </button>
+         </span>
+            <span>
+           <button mat-button matStepperNext> Next </button>
+         </span>
+        </mat-step>
+        <!-- Step 3 -->
+        <mat-step label='Confirm'>
+            <div>
+                <mat-card>
+                    <mat-card-content>
+                        <div>
+                            Proto ID: {{ proto.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Operator: {{ operator.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Group: {{ group.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Subgroup: {{ subgroup.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Description: {{ description.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Vehicle Type: {{ vehicletype.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Engine Type: {{ enginetype.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            License ID: {{ licenseid.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Customer: {{ customer.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Driver 1: {{ driver1.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Driver 2: {{ driver2.value }}
+                        </div>
+                        <br>
+                        <mat-divider></mat-divider>
+                        <br>
+                        <div>
+                            Comments: {{ comments.value }}
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+            <div style='display:flex'>
+                <span>
+         <button mat-button matStepperPrevious> Previous </button>
+         </span>
+                <span>
+         <button mat-button matStepperNext (click) = 'addProto()'> Confirm </button>
+         </span>
+            </div>
+        </mat-step>
+        <!-- Step 4 -->
+        <mat-step label='Done'>
+            <span>New vehicle added succesfully!</span>
+        </mat-step>
+    </mat-vertical-stepper>

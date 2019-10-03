@@ -1,0 +1,14 @@
+table {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.filterbar {
+  display: flex;
+  justify-content: center
+}
+
+.mat-header-cell {
+  text-align: center;
+}

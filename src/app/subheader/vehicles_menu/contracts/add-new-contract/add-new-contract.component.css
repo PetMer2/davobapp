@@ -1,0 +1,12 @@
+.stepper {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.test {
+  min-width: 300px;
+  max-width: 500px;
+}
+

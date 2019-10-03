@@ -1,0 +1,11 @@
+.stepper {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+mat-form-field {
+  min-width:300px;
+  max-width:500px;
+}

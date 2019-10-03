@@ -1,0 +1,238 @@
+<mat-divider></mat-divider>
+<div class ='stepper'>
+   <mat-vertical-stepper>
+      <mat-step label = 'Test-function'>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Name' [formControl] = 'name' >
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <textarea matInput placeholder = 'Description' [formControl] = 'description'></textarea>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = "DAF's ID">
+         <div>
+            <mat-form-field>
+               <mat-label>Project ID</mat-label>
+               <mat-select [formControl] = 'projectID'>
+                  <mat-option *ngFor = 'let project of projects' value = 'project.projectID'>{{ project.projectID }}</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <mat-label>Tracks ID</mat-label>
+               <mat-select [formControl] = 'tracksID'>
+                  <mat-option *ngFor = 'let track of tracks' value = 'track'>{{ track }}</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Planning'>
+         <div>
+            <mat-form-field>
+               <input matInput [matDatepicker]="startDate" [formControl] = 'dateStart' placeholder = 'Select start date'>
+               <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+               <mat-datepicker #startDate></mat-datepicker>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput [matDatepicker]="endDate" [formControl] = 'dateEnd' placeholder = 'Select end date'>
+               <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+               <mat-datepicker #endDate></mat-datepicker>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Final Distance' [formControl] = 'distance'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <mat-label>Scale Factor</mat-label>
+               <mat-select [formControl] = 'scaleFactor'>
+                  <mat-option *ngFor = 'let scalefactor of scaleFactors' value = '{{scalefactor}}'>{{ scalefactor }}</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Options'>
+         <div class = 'checkbox'>
+            <mat-checkbox [formControl] = 'contractOption'>Contract</mat-checkbox>
+            <mat-checkbox [formControl] = 'mtbfOption'>MTBF</mat-checkbox>
+            <mat-checkbox [formControl] = 'kmgraphOption'>KM Graph</mat-checkbox>
+            <mat-checkbox [formControl] = 'subgroupOption'>SubGroup</mat-checkbox>
+         </div>
+         <br>
+         <mat-divider></mat-divider>
+         <br>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Additional information'>
+         <div>
+            <mat-form-field>
+               <mat-label >Coordinator</mat-label>
+               <mat-select [formControl] = 'coordinator'>
+                  <mat-option *ngFor = 'let coordinator of coordinators' value = '{{coordinator}}'>{{ coordinator }}</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <mat-label>Test-function status</mat-label>
+               <mat-select [formControl] = 'status'>
+                  <mat-option *ngFor = 'let status of statuses' value = '{{status}}'>{{ status }}</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <textarea matInput placeholder = 'Comments' [formControl] = 'comments'></textarea>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Confirm'>
+         <div>
+            <mat-card>
+               <mat-card-title>The new test-function details</mat-card-title>
+               <mat-divider></mat-divider>
+               <br>
+               <mat-card-content>
+                  <div>
+                     <p>Test-function name: {{ name.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <p>Test-function description: {{ description.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <p>Project ID: {{ projectID.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <p>Tracks ID: {{ tracksID.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <h6>Start and end dates:</h6>
+                  </div>
+                  <br>
+                  <div>
+                     <p>Start: {{ dateStart.value }}</p>
+                  </div>
+                  <br>
+                  <div>
+                     <p>End: {{ dateEnd.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <p>Final distance: {{ distance.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <p>Scale factor: {{ scaleFactor.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <h6>Options: </h6>
+                  </div>
+                  <br>
+                  <div>
+                     <p>Contract option: {{ contractOption.value }}</p>
+                  </div>
+                  <br>
+                  <div>
+                     <p>MTBF: {{ mtbfOption.value }}</p>
+                  </div>
+                  <br>
+                  <div>
+                     <p>KM graph: {{ kmgraphOption.value }}</p>
+                  </div>
+                  <br>
+                  <div>
+                     <p>SubGroup: {{ mtbfOption.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <p>Coordinator: {{ coordinator.value }}</p>
+                  </div>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                  <div>
+                     <p>Status: {{ status.value }}</p>
+                  </div>
+               </mat-card-content>
+            </mat-card>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Done'>
+      </mat-step>
+   </mat-vertical-stepper>
+</div>
+<mat-divider></mat-divider>

@@ -1,0 +1,215 @@
+<mat-divider></mat-divider>
+<div class ='stepper'>
+   <mat-vertical-stepper>
+      <mat-step label = 'Dealer name'>
+         <mat-form-field>
+            <input matInput placeholder = 'Name' [formControl] = 'name'>
+         </mat-form-field>
+         <div>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Address'>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Street' [formControl] = 'street'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Postal' [formControl] = 'postal'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'City' [formControl] = 'city'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Country' [formControl] = 'country'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Phone' [formControl] = 'phone'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Fax' [formControl] = 'fax'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Mobile' [formControl] = 'mobile'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Web' [formControl] = 'website'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Email' [formControl] = 'email'>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'GPS Location'>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Latitude' [formControl] = 'latitude'>
+            </mat-form-field>
+         </div>
+         <div>
+            <mat-form-field>
+               <input matInput placeholder = 'Longitude' [formControl] = 'longitude'>
+            </mat-form-field>
+         </div>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Status'>
+         <mat-form-field>
+            <mat-select  placeholder = 'Status' [formControl] = 'status'>
+               <mat-option *ngFor = 'let status of statuses' value = '{{status}}'>{{ status }}</mat-option>
+            </mat-select>
+         </mat-form-field>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Comments'>
+         <mat-form-field>
+            <textarea matInput placeholder = 'Comments' [formControl] = 'comments'></textarea>
+         </mat-form-field>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext>
+            Next
+            </button>
+         </div>  
+      </mat-step>
+      <mat-step label = 'Confirm'>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>The new dealer details</mat-card-title>
+          </mat-card-header>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Dealer name: {{name.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Street: {{street.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Postal: {{postal.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>City: {{city.value}}</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Country: {{country.value}}</p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Phone: {{phone.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Fax: {{fax.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Mobile: {{mobile.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Website: {{website.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>E-mail: {{email.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Latitude: {{latitude.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Longitude: {{longitude.value}} </p>
+          </div>
+          <br>
+          <mat-divider></mat-divider>
+          <br>
+          <div>
+            <p>Status: {{status.value}} </p>
+          </div>
+        </mat-card>
+         <div>
+            <button mat-button matStepperPrevious>
+            Previous
+            </button>
+            <button mat-button matStepperNext (click) = 'addDealer()'>
+            Confirm
+            </button>
+         </div>
+      </mat-step>
+      <mat-step label = 'Done'>
+        <p> Dealer added succesfully! </p>
+      </mat-step>
+   </mat-vertical-stepper>
+</div>
+<mat-divider></mat-divider>

@@ -1,0 +1,11 @@
+.header {
+  justify-content: center;
+}
+
+#main_title{
+  font-family: 'Orbitron', sans-serif;
+}
+
+#main_title :hover{
+  cursor: pointer;
+}

@@ -1,0 +1,176 @@
+<mat-divider></mat-divider>
+<div class ='stepper'>
+   <mat-vertical-stepper>
+      <mat-step label = 'Project ID'>
+         <mat-form-field>
+            <input matInput [formControl] = 'projectID' placeholder = 'Project ID'>
+         </mat-form-field>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Project name'>
+         <mat-form-field>
+            <input matInput [formControl] = 'projectName' placeholder = 'Project name'>
+         </mat-form-field>
+         <button mat-button matStepperPrevious>
+         Previous
+         </button>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Description'>
+         <mat-form-field>
+            <textarea matInput [formControl] = 'projectDescription' placeholder = 'Project description'></textarea>
+         </mat-form-field>
+         <button mat-button matStepperPrevious>
+         Previous
+         </button>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'DAVOB group filter'>
+         <mat-form-field>
+            <mat-label>DAVOB Group Filter</mat-label>
+            <mat-select [formControl] = 'projectDavobFilter'>
+               <mat-option value = 'Yes'>
+                  Yes
+               </mat-option>
+               <mat-option value = 'No'>
+                  No
+               </mat-option>
+            </mat-select>
+         </mat-form-field>
+         <button mat-button matStepperPrevious>
+         Previous
+         </button>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Period'>
+        <div>
+        <mat-form-field>
+          <input matInput [matDatepicker]="startDate" [formControl] = 'projectStartDate' placeholder = 'Select start date'>
+          <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+          <mat-datepicker #startDate></mat-datepicker>
+        </mat-form-field>
+        </div>
+        <div>
+        <mat-form-field>
+          <input matInput [matDatepicker]="endDate" [formControl] = 'projectEndDate' placeholder = 'Select end date'>
+          <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+          <mat-datepicker #endDate></mat-datepicker>
+        </mat-form-field>
+        </div>
+        <button mat-button matStepperPrevious>
+         Previous
+         </button>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Coordinator'>
+        <mat-form-field>
+          <mat-label>Choose a coordinator</mat-label>
+          <mat-select [(value)] = 'selected' [formControl] = 'projectCoordinator'>
+            <mat-option *ngFor = 'let coordinator of coordinators' value = '{{coordinator}}'> 
+              {{ coordinator }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-button matStepperPrevious>
+         Previous
+         </button>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Status'>
+        <mat-form-field>
+          <mat-label>Choose a project status</mat-label>
+          <mat-select [(value)] = 'selected' [formControl] = 'projectStatus'>
+            <mat-option *ngFor = 'let status of statuses' value = '{{status}}'> {{ status }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-button matStepperPrevious>
+         Previous
+         </button>
+         <button mat-button matStepperNext>
+         Next
+         </button>
+      </mat-step>
+      <mat-step label = 'Confirm'>
+        <div>
+           <mat-card>
+             <mat-card-title>The new project details</mat-card-title>
+             <mat-divider></mat-divider>
+             <br>
+             <mat-card-content>
+               <div>
+                  <p>Project ID: {{ projectID.value }}</p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                 <p>Project name: {{ projectName.value }}</p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                 <p>Project description: {{ projectDescription.value }}</p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                 <p>DAVOB group filter: {{ projectDavobFilter.value }}</p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <br>
+               <div>
+                 <h6>Project start and end dates:</h6>
+               </div>
+               <br>
+               <div>
+                 <p>Start: {{ projectStartDate.value }}</p>
+               </div>
+               <br>
+               <div>
+                 <p>End: {{ projectEndDate.value }}</p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                 <p>Project coordinator: {{ projectCoordinator.value }}</p>
+               </div>
+               <br>
+               <mat-divider></mat-divider>
+               <br>
+               <div>
+                 <p>Project status: {{ projectStatus.value }}</p>
+               </div>
+             </mat-card-content>
+           </mat-card>
+         </div>
+         <div style = 'display:flex'>
+         <span>
+         <button mat-button matStepperPrevious> Previous </button>
+         </span>
+         <span>
+         <button mat-button matStepperNext (click) = 'submitProject()'> Confirm </button>
+         </span>
+         </div>
+      </mat-step>
+      <mat-step label = 'Done'>
+        <p> Response </p>
+      </mat-step>
+   </mat-vertical-stepper>
+</div>
